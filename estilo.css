@@ -1,0 +1,45 @@
+*{
+
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form{
+
+    padding: 70px 40px;
+    background-color: rgba(250, 100, 150, 0.815);
+    margin: 2%;
+    margin-top: 100px;
+    padding-top: 50px;
+}
+
+input{
+width: 15%;
+padding: 5px;
+margin: auto;
+margin-top: 18px;
+font-size: 16;
+
+
+}
+
+button{
+
+    background-color: blueviolet;
+    color: aliceblue;
+    
+    width: 80px;
+    height: 40px;
+    margin: 0 10%;
+    margin-top: 22px;
+    border: none;
+    position: static;
+
+}
+
+
+
+
+
+
