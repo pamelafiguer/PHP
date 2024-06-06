@@ -22,7 +22,9 @@ input{
     padding: 9px; 
     margin: auto; 
     margin-top: 12px; 
-    font-size: 16px; } 
+    font-size: 16px; 
+    text-align: center; } 
+    
 
 input[type='submit'] { 
     background-color: rgb(117, 55, 107); 
@@ -45,3 +47,13 @@ input[type='submit'] {
     padding: 12px; 
     background-color: #a22; 
     color: #fff; }
+
+    select{
+        width: calc(100% -20px); 
+        padding: 9px; 
+        margin: auto; 
+        margin-top: 12px; 
+        font-size: 16px; 
+        text-align: center;
+
+    }
