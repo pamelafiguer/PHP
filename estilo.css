@@ -7,7 +7,7 @@
 
 form { 
     padding: 50px 20px; 
-    background-color: #ededed; 
+    background-color: #e0cce6; 
     margin: calc(25% + 100px); 
     margin-top: 70px; padding-top: 28px; 
 } 
@@ -15,7 +15,7 @@ form {
 h1{ 
     text-align: center; 
     padding: 12px; 
-    color: #444 } 
+    color: #f3f5fa } 
     
 input{ 
     width: calc(100% -20px); 
@@ -25,7 +25,7 @@ input{
     font-size: 16px; } 
 
 input[type='submit'] { 
-    background-color: #48e; 
+    background-color: rgb(117, 55, 107); 
     color: #fff; 
     width: calc(80% - 20px); 
     margin: 0 10%; 
