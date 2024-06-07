@@ -9,7 +9,7 @@ $edad=$_POST['edad'];
 $ptotal=0;
 }
 
-switch(Tipo){
+switch($Tipo){
     case 1 : $ptotal = $dia * 25; break;
     case 2 : $ptotal = $dia * 30;break;
     case 3 : $ptotal = $dia * 40;break;
@@ -22,11 +22,11 @@ switch(Tipo){
 
 
 
-echo "El nombre es : .$Nombre<br>";
-echo "El tipo es :.$Tipo<br>";
-echo "el dia es :.$dia<br>";
-echo "la edad  es :.$edad<br>";
-echo "El total  es :.$ptotal<br>";
+echo "El nombre es : $Nombre<br>";
+echo "El tipo es : $Tipo<br>";
+echo "el dia es : $dia<br>";
+echo "la edad  es : $edad<br>";
+echo "El total  es : $ptotal<br>";
 
 
 
