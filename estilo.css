@@ -7,7 +7,7 @@
 
 form { 
     padding: 50px 20px; 
-    background-color: #d99bfd; 
+    background-color: #ededed; 
     margin: calc(25% + 100px); 
     margin-top: 70px; padding-top: 28px; 
 } 
@@ -15,17 +15,19 @@ form {
 h1{ 
     text-align: center; 
     padding: 12px; 
-    color: #683e53 } 
+    color: #444 } 
     
 input{ 
     width: calc(100% -20px); 
     padding: 9px; 
     margin: auto; 
     margin-top: 12px; 
-    font-size: 16px; } 
+    font-size: 16px; 
+    text-align: center; } 
+    
 
 input[type='submit'] { 
-    background-color: rgb(245, 61, 236); 
+    background-color: #48e; 
     color: #fff; 
     width: calc(80% - 20px); 
     margin: 0 10%; 
@@ -45,3 +47,13 @@ input[type='submit'] {
     padding: 12px; 
     background-color: #a22; 
     color: #fff; }
+
+    select{
+        width: calc(100% -20px); 
+        padding: 9px; 
+        margin: auto; 
+        margin-top: 12px; 
+        font-size: 16px; 
+        text-align: center;
+
+    }
