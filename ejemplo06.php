@@ -1,24 +1,26 @@
 <?php
+include("Conexion.php");
 
-if(isset($_POST)){
-$Nombre=$_POST['txtNombre'];
-$Tipo=$_POST['Tipo'];
-$dia=$_POST['dia'];
-$edad=$_POST['edad'];
 
-$ptotal=0;
-$a;
 
-}
 
-switch($Tipo){
-    case 1 : $a = $Tipo * 25; break;
-    case 2 : $a = $Tipo * 30;break;
-    case 3 : $a = $Tipo * 40;break;
-    case 4 : $a = $Tipo * 50;break;
-    case 5 : $a = $Tipo * 60;break;
-    default: $a=0;
-}
+if(isset($_POST['calcular'])){
+
+
+
+    if (
+        strlen($_POST['txtNombre']) >= 1 && 
+        strlen($_POST['Tipo']) >= 1 && 
+        strlen($_POST['dia']) >= 1 && 
+        strlen($_POST['edad']) >= 1 )
+    {
+
+    $Nombre=$_POST['txtNombre'];
+    $Tipo=$_POST['Tipo'];
+    $dia=$_POST['dia'];
+    $edad=$_POST['edad'];
+    $ptotal=0;
+
 switch($Tipo){
     case 1 : $ptotal = $dia * 25; break;
     case 2 : $ptotal = $dia * 30;break;
@@ -29,17 +31,33 @@ switch($Tipo){
 
 }
 
+if ($edad>= 14 && $edad<= 22) {
+    $ptotal = $ptotal * 1.10;
+    
+}
 
+$consulta="INSERT INTO paciente (Nombres, Tipo, Dia, Edad, CostoTotal) 
+VALUES ('$Nombre', '$Tipo', '$dia', '$edad', '$ptotal')";
 
+$resultado=mysqli_query($conexion,$consulta);
 
-echo "El nombre es : $Nombre<br>";
-echo "El tipo es : $a<br>";
-echo "el dia es : $dia<br>";
-echo "la edad  es : $edad<br>";
-echo "El total  es : $ptotal<br>";
+if ($resultado) {
+    ?>
+        <h3 class="success">Tu registro se a completado</h3>
+    <?php
+}else {
+    ?>
+        <h3 class="error">Ocurrio un error</h3>
+    <?php
+}
 
+} else { 
+    ?> <h3 class="error">Llenar todos los campos</h3>
+    
+    <?php 
+    }
+}
 
-
-
+echo "<a href=http://localhost/php/ejemplo01/formulario.php> volver a la pagina</a> ";
 
 ?>

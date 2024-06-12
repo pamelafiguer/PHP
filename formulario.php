@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="estilo01.css">
+    <link rel="stylesheet" href="estilo.css">
     <title>Mi pagina</title>
     
 </head>
@@ -15,7 +15,7 @@ Escribe Nombres:
 <input type="text" name="txtNombre"  id="Nombre" ><br>
 Seleccionar Tipo:
 
-<select name="Tipo" id="">
+<select name="Tipo" id="Tipo">
     
     <?php
 
@@ -55,14 +55,18 @@ seleccionar edad:
     
     ?>
 
-<input type="submit" value="calcular"> 
 
 </select>
 
 
+<input class="btn" type="submit" name="calcular" value="Enviar Mensaje">
 
 
 </form>
+
+<?php
+    include("ejemplo06.php")
+?>
     
 </body>
 </html>
