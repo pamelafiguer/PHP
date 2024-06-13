@@ -10,12 +10,14 @@ if(isset($_POST['calcular'])){
 
     if (
         strlen($_POST['txtNombre']) >= 1 && 
+        strlen($_POST['txtApellidos']) >= 1 && 
         strlen($_POST['Tipo']) >= 1 && 
         strlen($_POST['dia']) >= 1 && 
         strlen($_POST['edad']) >= 1 )
     {
 
     $Nombre=$_POST['txtNombre'];
+    $Apellido=$_POST['txtApellidos'];
     $Tipo=$_POST['Tipo'];
     $dia=$_POST['dia'];
     $edad=$_POST['edad'];
@@ -36,8 +38,8 @@ if ($edad>= 14 && $edad<= 22) {
     
 }
 
-$consulta="INSERT INTO paciente (Nombres, Tipo, Dia, Edad, CostoTotal) 
-VALUES ('$Nombre', '$Tipo', '$dia', '$edad', '$ptotal')";
+$consulta="INSERT INTO Paciente (Nombres, Apellidos, Tipo, Dia, Edad, CostoTotal) 
+VALUES ('$Nombre', '$Apellido','$Tipo', '$dia', '$edad', '$ptotal')";
 
 $resultado=mysqli_query($conexion,$consulta);
 
@@ -58,6 +60,6 @@ if ($resultado) {
     }
 }
 
-echo "<a href=http://localhost/php/ejemplo01/formulario.php> volver a la pagina</a> ";
+echo "<a href=http://localhost/dashboard/php/formulario.php> volver a la pagina</a> ";
 
 ?>
