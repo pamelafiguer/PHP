@@ -91,6 +91,6 @@ if ($resultado) {
     }
 
 
-echo "<a href=http://localhost/dashboard/php/formulario.php> volver a la pagina</a> ";
+echo "<a href=http://localhost/dashboard/php/Ejercicio/Formulario01.php> volver a la pagina</a> ";
 
 ?>
