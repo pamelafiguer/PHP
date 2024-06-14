@@ -8,6 +8,7 @@
 </head>
 <body>  
 <div class="form-container">
+    
     <h2>Formulario de Empleados</h2>
 
     
@@ -70,12 +71,12 @@
         </div> 
         
         <div class="form-content">
-        <label for="Edad">Edad</label>
-            <select name="Edad" id="Edad"><br>
+        <label>Edad</label>
+            <select  name="edad" ><br>
 
             <?php
-                for($i = 1; $i<= 100; $i++){
-                echo "<option value=$i>$i</option>";
+                for($i = 1; $i<= 100; $i ++){
+                    echo "<option value=$i>$i</option>";
                     }
             ?>
             
@@ -83,15 +84,15 @@
         </div> 
 
         <div class="form-content">
-          <label for="Redes">Redes Sociales</label>
-             <select name="Redes" id="Redes"><br>
+        <label for="Redes">Redes Sociales</label>
+            <select name="Redes" id="Redes"><br>
 
-             <option value="">Facebook</option>
-             <option value="">Instagram</option>
-             <option value="">Twitter</option>
-             <option value="">Linkendin</option>
+            <option value="">Facebook</option>
+            <option value="">Instagram</option>
+            <option value="">Twitter</option>
+            <option value="">Linkendin</option>
             
-             </select><br>
+            </select><br>
         </div> 
 
         <div class="form-content">
@@ -102,58 +103,14 @@
 
         <div class="form-content">
             <label for="sueldo">Sueldo</label>
-            <input type="text" id="Sueldo" name = "sueldo" placeholder="Sueldo">
+            <input type="decimal" id="Sueldo" name = "sueldo" placeholder="Sueldo">
         </div>
 
-        
-       <div class="form-content">
-            <label for="Escolaridad">Escolaridad</label>
-            <input type="text" id="email" name = "email" placeholder="Escolaridad">
-        </div>
-
-        <div class="form-content">
-            <label for="Gratificacion">Gratificacion</label>
-            <input type="text" id="Grati" name = "Grati" placeholder="Grati">
-        </div>
-
-        <div class="form-content">
-            <label for="Bono">Bono</label>
-            <input type="text" id="Bono" name = "Bono" placeholder="Bono">
-        </div>
-
-        <div class="form-content">
-            <label for="AFP">AFP</label>
-            <input type="text" id="AFP" name = "AFP" placeholder="AFP">
-        </div>
-
-        <div class="form-content">
-            <label for="Renta">Renta</label>
-            <input type="text" id="Renta" name = "Renta" placeholder="Renta">
-        </div>
-
-        <div class="form-content">
-            <label for="Egreso">Total Egreso</label>
-            <input type="text" id="Egreso" name = "Egreso" placeholder="Egreso">
-        </div>
-
-        <div class="form-content">
-            <label for="Neto">Neto</label>
-            <input type="text" id="Neto" name = "Neto" placeholder="Neto">
-        </div>
-
-        <div class="form-content">
-            <label for="Ingreso">Ingreso</label>
-            <input type="text" id="Ingreso" name = "Ingreso" placeholder="Ingreso">
-        </div>
-
-
-        
-    
     </div>
 
     
 
-    <input class="btn" type="submit" name="contact" value="Enviar">
+    <input class="btn" type="submit" name="calcular" value="Enviar">
 
     
     </form>

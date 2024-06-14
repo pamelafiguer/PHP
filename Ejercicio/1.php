@@ -2,18 +2,23 @@
 include("conexion.php");
 
 
+
+
 if(isset($_POST['calcular'])){
 
+
+
     if (
-        !empty($_POST['txtNombre']) && 
-        !empty($_POST['txtApellidos']) && 
-        !empty($_POST['Distrito']) && 
-        !empty($_POST['Turno']) && 
-        !empty($_POST['edad']) && 
-        !empty($_POST['RedesSociales']) && 
-        !empty($_POST['Correo']) && 
-        !empty($_POST['Sueldo']) 
-    ) {
+        strlen($_POST['txtNombre']) >= 1 && 
+        strlen($_POST['txtApellidos']) >= 1 && 
+        strlen($_POST['Distrito']) >= 1 && 
+        strlen($_POST['Turno']) >= 1 && 
+        strlen($_POST['Edad']) >= 1 && 
+        strlen($_POST['RedesSociales']) >= 1 && 
+        strlen($_POST['Correo']) >= 1 && 
+        strlen($_POST['Sueldo']) >= 1  
+    ) 
+    {
 
     $Nombre=$_POST['txtNombre'];
     $Apellido=$_POST['txtApellidos'];
@@ -24,18 +29,6 @@ if(isset($_POST['calcular'])){
     $Correo=$_POST['Correo'];
     $Sueldo = floatval($_POST['Sueldo']);
 
-    }
-
-    $Sueldo <= 0;
-    $Escolaridad <= 0;
-    $Gratificacion <= 0;
-    $Bono <= 0;
-    $TotalEgreso <= 0;
-    $TotalIngreso <= 0;
-    $AFP <= 0;
-    $Renta <= 0;
-    $Neto <= 0;
-
     $Escolaridad= $Sueldo  + 0.15;;
     $Gratificacion= $Sueldo + 0.20;
     $Bono= $Sueldo + 0.04;
@@ -45,10 +38,11 @@ if(isset($_POST['calcular'])){
     $TotalEgreso= $AFP + $Renta;
     $Neto= $TotalIngreso - $TotalEgreso;;
 
+}
 
-
-$consulta="INSERT INTO empleado (Nombres, Apellidos, Distrito, Turno, Edad, Redes_Sociales, Correo, Sueldo, Escolaridad, Gratificacion, Bono, AFP, Renta, TotalEgreso, TotalIngreso, Neto) 
+$consulta="INSERT INTO Empleado (Nombres, Apellidos, Distrito, Turno, Edad, Redes_Sociales, Correo, Sueldo, Escolaridad, Gratificacion, Bono, AFP, Renta, TotalEgreso, TotalIngreso, Neto) 
 VALUES ('$Nombre', '$Apellido','$Distrito', '$Turno', '$edad', '$Redes', '$Correo', '$Sueldo', '$Escolaridad', '$Gratificacion', '$Bono', '$AFP', '$Renta', '$TotalEgreso', '$TotalIngreso', '$Neto')";
+
 $resultado=mysqli_query($conexion,$consulta);
 
 if ($resultado) {
@@ -61,16 +55,17 @@ if ($resultado) {
     <?php
 }
 
-}
+} 
 
 
-echo "Escolaridad:  <br>";
-echo "Gratificacion: $Gratificacion.<br>";
-echo "Bono: $Bono. <br>";
-echo "AFP:  $AFP. <br>";
-echo "Renta: $Renta  <br>";
-echo "TotalEgreso: $TotalEgreso <br>";
-echo "TotalIngreso:  $TotalIngreso <br>";
-echo "Neto: $Neto  <br>";
+echo "Escolaridad: " . $Escolaridad . "<br>";
+echo "Gratificacion: " . $Gratificacion . "<br>";
+echo "Bono: " . $Bono . "<br>";
+echo "AFP: " . $AFP . "<br>";
+echo "Renta: " . $Renta . "<br>";
+echo "TotalEgreso: " . $TotalEgreso . "<br>";
+echo "TotalIngreso: " . $TotalIngreso . "<br>";
+echo "Neto: " . $Neto . "<br>";
 echo "<a href=http://localhost/php/ejemplo01/Ejercicio/Formulario01.php> volver a la pagina</a> ";
+
 ?>
