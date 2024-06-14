@@ -38,7 +38,7 @@ if ($edad>= 14 && $edad<= 22) {
     
 }
 
-$consulta="INSERT INTO Paciente (Nombres, Apellidos, Tipo, Dia, Edad, CostoTotal) 
+$consulta="INSERT INTO paciente (Nombres, Apellidos, Tipo, Dia, Edad, CostoTotal) 
 VALUES ('$Nombre', '$Apellido','$Tipo', '$dia', '$edad', '$ptotal')";
 
 $resultado=mysqli_query($conexion,$consulta);
@@ -60,6 +60,63 @@ if ($resultado) {
     }
 }
 
+
+?>
+
+
+
+<?php
+
+if (isset($_POST["consultar"])) {
+
+    /*include("Conexion.php");
+    $consulta=mysqli_query($conexion, "SELECT * FROM Paciente");
+    while($resultado = mysqli_fetch_array($consulta)){
+    */
+
+        $Tipo=$_POST['Tipo'];
+        include("Conexion.php");
+        $consulta=mysqli_query($conexion, "SELECT * FROM Paciente where tipo = $Tipo");
+        while($resultado = mysqli_fetch_array($consulta)) {
+        
+    echo "
+
+   <table width=\"100\" border=\"1\">
+<tr>
+<td>cODIGO DEL PACIENTE</td><td>NOMBRE DEL PACIENTE</td><td>Apellidos PACIENTE</td>
+<td>Tipo</td><td>Dia HOSPITALIZDA</td><td>CostoTotal DE PAGAR</td>
+</tr>
+<tr>
+<td>".$resultado["idAlumno"]."</td>
+<td>".$resultado["Nombres"]." </td>
+<td>".$resultado["Apellidos"]." </td>
+<td> ".$resultado["tipo"]."</td>
+<td>".$resultado["Dia"]."</td>
+<td>".$resultado["Edad"]." </td>
+<td>".$resultado["CostoTotal"]." </td>
+
+</tr>
+</table>
+
+";
+
+
+
+
+
+}
+include("CerraConexion.php");
+}
+
+
+        
+        
+
 echo "<a href=http://localhost/dashboard/php/formulario.php> volver a la pagina</a> ";
+
+    
+
+
+    
 
 ?>

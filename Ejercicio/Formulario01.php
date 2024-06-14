@@ -32,30 +32,30 @@
 
             <option value="">Ancon</option>
             <option value="">Ate</option>
-            <option value="">Barranco</option>
-            <option value="">Breña</option>
-            <option value="">Carabayllo</option>
-            <option value="">Cercado de Lima</option>
-            <option value="">Chaclacayo</option>
-            <option value="">Chorrillos</option>
-            <option value="">Cieneguilla</option>
-            <option value="">Comas</option>
-            <option value="">El Agustino</optio>
-            <option value="">Independencia</option>
-            <option value="">Jesus Maria</option>
-            <option value="">La Molina</option>
-            <option value="">La Victoria</option>
-            <option value="">Lince</option>
-            <option value="">Los Olivos</option>
-            <option value="">Lurigancho</option>
-            <option value="">Lurin</option>
-            <option value="">Magdalena del mar</option>
-            <option value="">Miraflores</option>
-            <option value="">Pachacamac</option>
-            <option value="">Pucusana</option>
-            <option value="">Pueblo Libre</option>
-            <option value="">Puente Piedra</option>
-            <option value="">San Juan de Lurigancho</option>
+            <option >Barranco</option>
+            <option >Breña</option>
+            <option >Carabayllo</option>
+            <option >Cercado de Lima</option>
+            <option >Chaclacayo</option>
+            <option >Chorrillos</option>
+            <option >Cieneguilla</option>
+            <option >Comas</option>
+            <option >El Agustino</optio>
+            <option >Independencia</option>
+            <option >Jesus Maria</option>
+            <option >La Molina</option>
+            <option >La Victoria</option>
+            <option >Lince</option>
+            <option>Los Olivos</option>
+            <option >Lurigancho</option>
+            <option>Lurin</option>
+            <option>Magdalena del mar</option>
+            <option>Miraflores</option>
+            <option>Pachacamac</option>
+            <option>Pucusana</option>
+            <option>Pueblo Libre</option>
+            <option>Puente Piedra</option>
+            <option>San Juan de Lurigancho</option>
             </select><br>
         </div> 
 
@@ -63,16 +63,16 @@
         <label for="Turno">Turno</label>
             <select name="Turno" id="Turno"><br>
 
-            <option value="">Mañana</option>
-            <option value="">Tarde</option>
-            <option value="">Noche</option>
+            <option >Mañana</option>
+            <option >Tarde</option>
+            <option >Noche</option>
             
             </select><br>
         </div> 
         
         <div class="form-content">
         <label>Edad</label>
-            <select  name="edad" ><br>
+            <select  name="Edad" ><br>
 
             <?php
                 for($i = 1; $i<= 100; $i ++){
@@ -87,10 +87,10 @@
         <label for="Redes">Redes Sociales</label>
             <select name="Redes" id="Redes"><br>
 
-            <option value="">Facebook</option>
-            <option value="">Instagram</option>
-            <option value="">Twitter</option>
-            <option value="">Linkendin</option>
+            <option >Facebook</option>
+            <option >Instagram</option>
+            <option >Twitter</option>
+            <option >Linkendin</option>
             
             </select><br>
         </div> 
@@ -103,7 +103,7 @@
 
         <div class="form-content">
             <label for="sueldo">Sueldo</label>
-            <input type="decimal" id="Sueldo" name = "sueldo" placeholder="Sueldo">
+            <input type="number" id="Sueldo" name = "sueldo" placeholder="Sueldo">
         </div>
 
     </div>
@@ -111,6 +111,8 @@
     
 
     <input class="btn" type="submit" name="calcular" value="Enviar">
+  
+
 
     
     </form>
