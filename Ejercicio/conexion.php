@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost"; // o el nombre del servidor donde se ejecuta MySQL
 $username = "root";
-$password = "123";
+$password = "";
 $database = "hospital";
 
 // Crear la conexión

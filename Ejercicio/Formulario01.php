@@ -11,7 +11,6 @@
     
     <h2>Formulario de Empleados</h2>
 
-    
 
     <form action="Contacto.php" method="post" autocomplete="off">
 
@@ -56,6 +55,7 @@
             <option value="">Pucusana</option>
             <option value="">Pueblo Libre</option>
             <option value="">Puente Piedra</option>
+            <option value="">San Juan de Lurigancho</option>
             </select><br>
         </div> 
 
