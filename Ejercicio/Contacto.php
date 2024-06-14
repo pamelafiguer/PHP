@@ -5,36 +5,24 @@ include("conexion.php");
 if(isset($_POST['calcular'])){
 
     if (
-        !empty($_POST['txtNombre']) && 
-        !empty($_POST['txtApellidos']) && 
-        !empty($_POST['Distrito']) && 
-        !empty($_POST['Turno']) && 
-        !empty($_POST['edad']) && 
-        !empty($_POST['RedesSociales']) && 
-        !empty($_POST['Correo']) && 
-        !empty($_POST['Sueldo']) 
+        strlen($_POST['txtNombres']) >= 1 && 
+        strlen($_POST['txtApellidos']) >= 1 && 
+        strlen($_POST['Distrito']) >= 1 && 
+        strlen($_POST['Turno']) >= 1 && 
+        strlen($_POST['Edad']) >= 1 && 
+        strlen($_POST['Redes']) >= 1 && 
+        strlen($_POST['email']) >= 1 && 
+        strlen($_POST['Sueldo']) >= 1   
     ) {
 
-    $Nombre=$_POST['txtNombre'];
+    $Nombre=$_POST['txtNombres'];
     $Apellido=$_POST['txtApellidos'];
     $Distrito=$_POST['Distrito'];
     $Turno=$_POST['Turno'];
-    $edad=$_POST['edad'];
+    $Edad=$_POST['Edad'];
     $Redes=$_POST['Redes'];
-    $Correo=$_POST['Correo'];
-    $Sueldo = floatval($_POST['Sueldo']);
-
-    }
-
-    $Sueldo <= 0;
-    $Escolaridad <= 0;
-    $Gratificacion <= 0;
-    $Bono <= 0;
-    $TotalEgreso <= 0;
-    $TotalIngreso <= 0;
-    $AFP <= 0;
-    $Renta <= 0;
-    $Neto <= 0;
+    $Correo=$_POST['email'];
+    $Sueldo = $_POST['Sueldo'];
 
     $Escolaridad= $Sueldo  + 0.15;;
     $Gratificacion= $Sueldo + 0.20;
@@ -45,11 +33,14 @@ if(isset($_POST['calcular'])){
     $TotalEgreso= $AFP + $Renta;
     $Neto= $TotalIngreso - $TotalEgreso;;
 
+    
+
+$consulta= "INSERT INTO Empleado (Nombres, Apellidos, Distrito, Turno, Edad, Redes_Sociales, Correo, Sueldo, Escolaridad, Gratificacion, Bono, AFP, Renta, TotalEgreso, TotalIngreso, Neto) 
+VALUES ('$Nombre', '$Apellido','$Distrito', '$Turno', '$Edad', '$Redes', '$Correo', '$Sueldo', '$Escolaridad', '$Gratificacion', '$Bono', '$AFP', '$Renta', '$TotalEgreso', '$TotalIngreso', '$Neto');";
 
 
-$consulta="INSERT INTO empleado (Nombres, Apellidos, Distrito, Turno, Edad, Redes_Sociales, Correo, Sueldo, Escolaridad, Gratificacion, Bono, AFP, Renta, TotalEgreso, TotalIngreso, Neto) 
-VALUES ('$Nombre', '$Apellido','$Distrito', '$Turno', '$edad', '$Redes', '$Correo', '$Sueldo', '$Escolaridad', '$Gratificacion', '$Bono', '$AFP', '$Renta', '$TotalEgreso', '$TotalIngreso', '$Neto')";
 $resultado=mysqli_query($conexion,$consulta);
+    
 
 if ($resultado) {
     ?>
@@ -61,16 +52,16 @@ if ($resultado) {
     <?php
 }
 
+} else { 
+    ?> <h3 class="error">Llenar todos los campos</h3>
+    
+    <?php 
+    }
 }
 
 
-echo "Escolaridad:  <br>";
-echo "Gratificacion: $Gratificacion.<br>";
-echo "Bono: $Bono. <br>";
-echo "AFP:  $AFP. <br>";
-echo "Renta: $Renta  <br>";
-echo "TotalEgreso: $TotalEgreso <br>";
-echo "TotalIngreso:  $TotalIngreso <br>";
-echo "Neto: $Neto  <br>";
+
+
+
 echo "<a href=http://localhost/php/ejemplo01/Ejercicio/Formulario01.php> volver a la pagina</a> ";
 ?>
