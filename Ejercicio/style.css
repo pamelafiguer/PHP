@@ -116,6 +116,20 @@ input{
     );
 }
 
+.btnn {
+    padding: 19px 20px;
+    width: 80px;
+    align-self: center;
+    text-transform: #f5fcff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background: linear-gradient(
+        90deg,
+        rgba(67,151, 239,1) 0%,
+        rgb(83, 224, 215) 100%
+    );
+}
+
 .seccess {
     position: absolute;
     top: 50px;

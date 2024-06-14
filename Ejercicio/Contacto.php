@@ -1,6 +1,13 @@
 <?php
 include("conexion.php");
 
+if($conexion){
+    echo "check
+    .<br>";
+}else{
+    echo " no permite conectarse a la base de datos.<br>";
+}
+
 
 if(isset($_POST['calcular'])){
 
@@ -12,8 +19,9 @@ if(isset($_POST['calcular'])){
         strlen($_POST['Edad']) >= 1 && 
         strlen($_POST['Redes']) >= 1 && 
         strlen($_POST['email']) >= 1 && 
-        strlen($_POST['Sueldo']) >= 1   
-    ) {
+        strlen($_POST['sueldo']) >= 1 
+    )
+     {
 
     $Nombre=$_POST['txtNombres'];
     $Apellido=$_POST['txtApellidos'];
@@ -22,8 +30,9 @@ if(isset($_POST['calcular'])){
     $Edad=$_POST['Edad'];
     $Redes=$_POST['Redes'];
     $Correo=$_POST['email'];
-    $Sueldo = $_POST['Sueldo'];
+    $Sueldo = $_POST['sueldo'];
 
+    
     $Escolaridad= $Sueldo  + 0.15;;
     $Gratificacion= $Sueldo + 0.20;
     $Bono= $Sueldo + 0.04;
@@ -35,33 +44,24 @@ if(isset($_POST['calcular'])){
 
     
 
-$consulta= "INSERT INTO Empleado (Nombres, Apellidos, Distrito, Turno, Edad, Redes_Sociales, Correo, Sueldo, Escolaridad, Gratificacion, Bono, AFP, Renta, TotalEgreso, TotalIngreso, Neto) 
-VALUES ('$Nombre', '$Apellido','$Distrito', '$Turno', '$Edad', '$Redes', '$Correo', '$Sueldo', '$Escolaridad', '$Gratificacion', '$Bono', '$AFP', '$Renta', '$TotalEgreso', '$TotalIngreso', '$Neto');";
-
-
+$consulta="INSERT INTO Empleados (Nombres, Apellidos, Distrito, Turno, Edad, Redes_Sociales, Correo, Sueldo, Escolaridad, Gratificacion, Bono, AFP, Renta, TotalEgreso, TotalIngreso, Neto) 
+VALUES ('$Nombre', '$Apellido','$Distrito', '$Turno', '$edad', '$Redes', '$Correo', '$Sueldo', '$Escolaridad', '$Gratificacion', '$Bono', '$AFP', '$Renta', '$TotalEgreso', '$TotalIngreso', '$Neto')";
 $resultado=mysqli_query($conexion,$consulta);
     
 
 if ($resultado) {
     ?>
-        <h3 class="success">Tu registro se a completado</h3>
+        <h3>Tu registro se a completado</h3>
     <?php
 }else {
     ?>
-        <h3 class="error">Ocurrio un error</h3>
+        <h3>Ocurrio un error</h3>
     <?php
 }
 
-} else { 
-    ?> <h3 class="error">Llenar todos los campos</h3>
-    
-    <?php 
-    }
+     }
 }
 
 
-
-
-
-echo "<a href=http://localhost/php/ejemplo01/Ejercicio/Formulario01.php> volver a la pagina</a> ";
+echo "<a href=http://localhost/dashboard/php/Ejercicio/Formulario01.php> volver a la pagina</a> ";
 ?>

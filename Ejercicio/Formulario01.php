@@ -11,7 +11,6 @@
     
     <h2>Formulario de Empleados</h2>
 
-    
 
     <form action="Contacto.php" method="POST">
 
@@ -115,6 +114,8 @@
     
 
     <input class="btn" type="submit" name="calcular" value="Enviar">
+
+
 
     
     </form>

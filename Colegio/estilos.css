@@ -1,21 +1,31 @@
-* { 
-    padding: 0; 
-    margin: 0; 
-    font-family: 
-    century gothic; 
+@import url("<link href=https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
+
 
 form { 
     padding: 50px 20px; 
-    background-color: #f2b4fa; 
+    background: linear-gradient( 
+        50deg,
+        rgb(5, 153, 190)0%,
+        rgb(118, 188, 245) 50%,
+        rgb(183, 213, 241) 100%
+    );
     margin: calc(25% + 100px); 
     margin-top: 70px; padding-top: 28px; 
 } 
+
+
     
 h1{ 
     text-align: center; 
     padding: 12px; 
-    color: #930ae2 } 
+    color: #fcfcfc } 
     
 input{ 
     width: calc(100% -20px); 
@@ -27,7 +37,7 @@ input{
     
 
 input[type='submit'] { 
-    background-color: rgb(95, 227, 245); 
+    background-color: rgb(19, 52, 243); 
     color: #fff; 
     width: calc(80% - 20px); 
     margin: 0 10%; 
@@ -48,19 +58,10 @@ input[type='submit'] {
     background-color: #a22; 
     color: #fff; }
 
-select{
-        width: calc(100% -20px); 
-        padding: 9px; 
-        margin: auto; 
-        margin-top: 12px; 
-        font-size: 16px; 
-        text-align: center;
-
-}
-        
+  
         select{
-            padding: 20px 15px;
-            background-color: #78daeb;
+            padding: 15px 10px;
+            background-color: #a683f8;
             border: 0;
             outline: none;
             border-radius: 25px;
@@ -70,7 +71,7 @@ select{
         
         input{
             padding: 20px 15px;
-            background-color: #78daeb;
+            background-color: #a683f8;
             border: 0;
             outline: none;
             border-radius: 25px;
@@ -78,8 +79,3 @@ select{
             font-size: 16px;
         }
         
-
-
-
-
-
