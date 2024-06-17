@@ -38,7 +38,7 @@ if ($edad>= 14 && $edad<= 22) {
     
 }
 
-$consulta="INSERT INTO paciente (Nombres, Apellidos, Tipo, Dia, Edad, CostoTotal) 
+$consulta="INSERT INTO paciente (Nombres, Apellidos, Tipo, Dia, Edad, Total) 
 VALUES ('$Nombre', '$Apellido','$Tipo', '$dia', '$edad', '$ptotal')";
 
 $resultado=mysqli_query($conexion,$consulta);
@@ -81,7 +81,7 @@ if (isset($_POST["consultar"])) {
         
     echo "
 
-   <table width=\"100\" border=\"1\">
+<table width=\"100\" border=\"1\">
 <tr>
 <td>cODIGO DEL PACIENTE</td><td>NOMBRE DEL PACIENTE</td><td>Apellidos PACIENTE</td>
 <td>Tipo</td><td>Dia HOSPITALIZDA</td><td>CostoTotal DE PAGAR</td>

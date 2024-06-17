@@ -57,6 +57,10 @@ if($consulta){
         <?php
              }
             
+        }else{
+            ?>
+       <h1>¡Llenar todos los datos!</h1>
+        <?php
         }
 }
  ?>
@@ -79,8 +83,8 @@ if (isset($_POST["consultar"])) {
 
    <table width=\"100\" border=\"1\">
 <tr>
-<td>Codigo del estudiante</td><td>NOMBRES</td><td>Apellidos</td>
-<td>CURSO</td><td>NOTA1</td><td>NOTA2</td><td>NOTA3</td><td>NOTA4</td>
+<td>Codigo del estudiante</td><td>Nombres del estudiante</td><td>Apellidos del Estidiante</td>
+<td>Curso </td><td>NOTA1</td><td>NOTA2</td><td>NOTA3</td><td>NOTA4</td>
 <td>PROMEDIO</td><td>OBS</td>
 </tr>
 <tr>
@@ -112,7 +116,7 @@ include("CerrarConex.php");
 } 
         
 
-echo "<a href=http://localhost/dashboard/php/Colegio/Formulario.php> volver a la pagina</a> ";
+echo "<a href=http://localhost/php/ejemplo01/Colegio/Formulario.php> volver a la pagina</a> ";
 
     
 

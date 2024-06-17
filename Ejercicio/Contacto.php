@@ -19,9 +19,9 @@ if(isset($_POST['calcular'])){
         strlen($_POST['Edad']) >= 1 && 
         strlen($_POST['Redes']) >= 1 && 
         strlen($_POST['email']) >= 1 && 
-        strlen($_POST['sueldo']) >= 1 
+        strlen($_POST['Sueldo']) >= 1 
     )
-     {
+    {
 
     $Nombre=$_POST['txtNombres'];
     $Apellido=$_POST['txtApellidos'];
@@ -30,7 +30,7 @@ if(isset($_POST['calcular'])){
     $Edad=$_POST['Edad'];
     $Redes=$_POST['Redes'];
     $Correo=$_POST['email'];
-    $Sueldo = $_POST['sueldo'];
+    $Sueldo = $_POST['Sueldo'];
 
     
     $Escolaridad= $Sueldo  + 0.15;;
@@ -44,8 +44,8 @@ if(isset($_POST['calcular'])){
 
     
 
-$consulta="INSERT INTO Empleados (Nombres, Apellidos, Distrito, Turno, Edad, Redes_Sociales, Correo, Sueldo, Escolaridad, Gratificacion, Bono, AFP, Renta, TotalEgreso, TotalIngreso, Neto) 
-VALUES ('$Nombre', '$Apellido','$Distrito', '$Turno', '$edad', '$Redes', '$Correo', '$Sueldo', '$Escolaridad', '$Gratificacion', '$Bono', '$AFP', '$Renta', '$TotalEgreso', '$TotalIngreso', '$Neto')";
+$consulta="INSERT INTO empleado (Nombres, Apellidos, Distrito, Turno, Edad, Redes_Sociales, Correo, Sueldo, Escolaridad, Gratificacion, Bono, AFP, Renta, TotalEgreso, TotalIngreso, Neto) 
+VALUES ('$Nombre', '$Apellido','$Distrito', '$Turno', '$Edad', '$Redes', '$Correo', '$Sueldo', '$Escolaridad', '$Gratificacion', '$Bono', '$AFP', '$Renta', '$TotalEgreso', '$TotalIngreso', '$Neto')";
 $resultado=mysqli_query($conexion,$consulta);
     
 
@@ -60,6 +60,8 @@ if ($resultado) {
 }
 
      }
+
+
 }
 
 

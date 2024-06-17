@@ -9,15 +9,16 @@
 
 
 form { 
-    padding: 50px 20px; 
+    padding:  50px;
     background: linear-gradient( 
         50deg,
         rgb(5, 153, 190)0%,
         rgb(118, 188, 245) 50%,
         rgb(183, 213, 241) 100%
     );
-    margin: calc(25% + 100px); 
-    margin-top: 70px; padding-top: 28px; 
+    margin: calc(16% + 100px); 
+    margin-top: 70px; 
+    padding-top: 28px; 
 } 
 
 

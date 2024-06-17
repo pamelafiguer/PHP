@@ -9,7 +9,7 @@
 <body>
 
 <form action="Ejemplo01.php" method="post">
-    <link rel="a" href="Ejemplo01.php">
+
 <h1>Promedio de Notas del Estudiante</h1>
 
 Nombres:
@@ -56,13 +56,13 @@ Nota3 :
 
 Nota4:
 
-<input type="text" name="Nota4"  id="Nota4" ><br>
+<input type="text" name="Nota4"  id="Nota4" >
 
 
 
 
 <input class="btn" type="submit" name="calcular" value="Enviar Mensaje">   
-<input class="btnn" type="submit" name="consultar" value="consulta">   
+<input class="btnn" type="submit" name="consultar" value="Consulta">   
 
 
 </form>
