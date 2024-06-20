@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilo01.css">
     <title>Mi pagina</title>
     
 </head>
 <body>
 <form action="ejemplo06.php" method="post">
-<h1>Trabajador .......</h1>
+<h1>Formulario</h1>
 
 Escribe Nombres:
 
@@ -19,7 +19,7 @@ Seleccionar Tipo:
     <?php
 
     for($i = 1; $i<= 5; $i++){
-        echo "?>option values=$i>$i</option>";
+        echo "<option value=$i>$i</option>";
     }
     
     
@@ -34,7 +34,7 @@ seleccionar dia:
     <?php
 
     for($i = 1; $i<= 100; $i++){
-        echo "?>option values=$i>$i</option>";
+        echo "<option value=$i>$i</option>";
     }
     
     
@@ -48,13 +48,16 @@ seleccionar edad:
     <?php
 
     for($i = 1; $i<= 100; $i++){
-        echo "?>option values=$i>$i</option>";
+        echo "<option value=$i>$i</option>";
     }
     
     
     ?>
 
 </select>
+
+<input type="submit" value="calcular"> 
+
 
 
 

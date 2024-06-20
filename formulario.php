@@ -7,19 +7,25 @@
 </head>
 <body>
 <form action="ejemplo06.php" method="post">
+    <link rel="a" href="ejemplo06.php">
 <h1>Trabajador .......</h1>
 
 Escribe Nombres:
 
 <input type="text" name="txtNombre"  id="Nombre" ><br>
+
+Escribe Apellidos:
+
+<input type="text" name="txtApellidos"  id="Apellidos" ><br>
+
 Seleccionar Tipo:
 
-<select name="Tipo" id="">
+<select name="Tipo" id="Tipo">
     
     <?php
 
     for($i = 1; $i<= 5; $i++){
-        echo "?>option values=$i>$i</option>";
+        echo "<option value=$i>$i</option>";
     }
     
     
@@ -34,7 +40,7 @@ seleccionar dia:
     <?php
 
     for($i = 1; $i<= 100; $i++){
-        echo "?>option values=$i>$i</option>";
+        echo "<option value=$i>$i</option>";
     }
     
     
@@ -48,18 +54,23 @@ seleccionar edad:
     <?php
 
     for($i = 1; $i<= 100; $i++){
-        echo "?>option values=$i>$i</option>";
+        echo "<option value=$i>$i</option>";
     }
     
     
     ?>
 
+
 </select>
 
 
+<input class="btn" type="submit" name="calcular" value="Enviar Mensaje">   
+<input class="btnn" type="submit" name="consultar" value="consulta">   
 
 
 </form>
+
+<?php
+    include("ejemplo06.php")
+?>
     
-</body>
-</html>
