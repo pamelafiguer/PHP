@@ -1,12 +1,7 @@
 <?php
 include("conexion.php");
 
-if($conexion){
-    echo "check
-    .<br>";
-}else{
-    echo " no permite conectarse a la base de datos.<br>";
-}
+
 
 
 if(isset($_POST['calcular'])){
@@ -59,7 +54,7 @@ if ($resultado) {
     <?php
 }
 
-     }
+    }
 
 
 }

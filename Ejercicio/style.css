@@ -67,7 +67,7 @@ form {
     flex-direction: column;
 }
 
-.label {
+label {
     color: #F5FCFF;
     font-size: 15px;
     margin-bottom: 15px;
@@ -89,7 +89,7 @@ input{
     border: 0;
     outline: none;
     border-radius: 25px;
-    color: #F5FCFF;
+    color: #474949;
     font-size: 16px;
 }
 
@@ -103,7 +103,7 @@ input{
 
 
 .btn {
-    padding: 19px 20px;
+    padding: 30px 20px;
     width: 180px;
     align-self: center;
     text-transform: #f5fcff;
@@ -111,8 +111,8 @@ input{
     cursor: pointer;
     background: linear-gradient(
         90deg,
-        rgba(67,151, 239,1) 0%,
-        rgb(83, 224, 215) 100%
+        rgb(19, 124, 236) 0%,
+        rgb(32, 221, 208) 100%
     );
 }
 
