@@ -1,0 +1,186 @@
+@import url("<link href=https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        180deg, 
+        rgb(98, 74, 206)0%,
+        rgb(120, 114, 202) 50%,
+        rgb(226, 147, 219) 100%
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.form-container {
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 40px;
+    color: aliceblue;
+    margin-bottom: 10px;
+}
+.form-container p {
+    font-size:  18px;
+    color: #949F8D;
+    margin-bottom: 50px;
+}
+
+form {
+    padding:  80px;
+    background: linear-gradient( 
+        50deg,
+        rgb(8, 49, 59)0%,
+        rgb(107, 76, 192) 50%,
+        rgb(230, 144, 247) 100%
+    );
+
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(128, 122, 122, 0.2);
+    width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;  
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 40px;
+    margin-bottom: 40px;
+}
+
+.form-content {
+    display:  flex;
+    flex-direction: column;
+}
+
+label{
+    color: #F5FCFF;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+select{
+    padding: 20px 15px;
+    background-color: #78daeb;
+    border: 0;
+    outline: none;
+    border-radius: 25px;
+    color: #F5FCFF;
+    font-size: 16px;
+    
+}
+
+input{
+    padding: 20px 15px;
+    background-color: #78daeb;
+    border: 0;
+    outline: none;
+    border-radius: 25px;
+    color: #fcffff;
+    font-size: 16px;
+}
+input#dewey{
+    padding: 20px 15px;
+    background-color: #78daeb;
+    border: 0;
+    outline: none;
+    border-radius: 25px;
+    color: #fcffff;
+    font-size: 16px;
+
+}
+
+
+::placeholder {
+    color: #eff1ef;
+    font-size: 16px;
+
+}
+
+
+
+.btn1 {
+    padding: 30px 40px;
+    width: 300px;
+    align-self: center;
+    text-transform: #f5fcff;
+    box-shadow: 0 0 20px rgba(236, 229, 229, 0.2);
+    cursor: pointer;
+    background: linear-gradient(
+        90deg,
+        rgb(19, 124, 236) 0%,
+        rgb(32, 221, 208) 100%
+    );
+}
+
+.btn2 {
+    padding: 30px 20px;
+    width: 300px;
+    align-self: center;
+    text-transform: #f5fcff;
+    box-shadow: 0 0 20px rgba(236, 229, 229, 0.2);
+    cursor: pointer;
+    background: linear-gradient(
+        90deg,
+        rgba(67,151, 239,1) 0%,
+        rgb(83, 224, 215) 100%
+    );
+}
+
+.btn3 {
+    padding: 30px 20px;
+    width: 300px;
+    align-self: center;
+    text-transform: #f5fcff;
+    box-shadow: 0 0 20px rgba(236, 229, 229, 0.2);
+    cursor: pointer;
+    background: linear-gradient(
+        90deg,
+        rgba(67,151, 239,1) 0%,
+        rgb(83, 224, 215) 100%
+    );
+}
+
+.seccess {
+    position: absolute;
+    top: 50px;
+    color: rgba(2, 227, 211);
+    font-size: 10px;
+}
+
+
+
+@media (max-width:991px){
+    body {
+        padding: 30px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .form-group{
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 20px;
+        margin-bottom: 20px;
+
+    }
+
+    textarea{
+        margin-bottom: 30px;
+    }
+}
