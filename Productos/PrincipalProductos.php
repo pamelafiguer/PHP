@@ -29,8 +29,8 @@ if (isset($_POST['Categoria'])) {
             echo "<td>".$row['CategoryName']."</td>";
             echo "<td>".$row['Unit']."</td>";
             echo "<td>".$row['Price']."</td>";
-            echo "<td><a href=editar.php?CustomerID=".$row['Codigo'].">Editar</a></td>";
-            echo "<td><a href=eliminar.php?CustomerID=".$row['codigo'].">Eliminar</a></td>";
+            //echo "<td><a href=editar.php?CustomerID=".$row['Codigo'].">Editar</a></td>";
+           // echo "<td><a href=eliminar.php?CustomerID=".$row['codigo'].">Eliminar</a></td>";
             echo "</tr>";
             $n++;
         }
