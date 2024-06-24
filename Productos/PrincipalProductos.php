@@ -1,15 +1,12 @@
 <?php
 require_once "ConexionPDO.php";
 $conn=new ConexionPDO();
+$conn->open_connection();
 
-if (isset($_POST['Categoria'])) {
-    $country = $_POST['Categoria'];
 
     $rs=$conn->ejecutar("SELECT p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, p.Unit, p.Price FROM  
     products p  INNER JOIN  categories c ON p.CategoryID = c.CategoryID INNER JOIN suppliers  s ON 
-    p.SupplierID = s.SupplierID where p.ProductID order by 1;
-
-");
+    p.SupplierID = s.SupplierID where p.ProductID order by 1; ");
     $data=$rs->fetchAll();
 
     if ($data) {
@@ -38,7 +35,7 @@ if (isset($_POST['Categoria'])) {
     
     }
 
-}
 
-echo "<a href='http://localhost/dashboard/php/clientes-php-1/Customer.Pais/Consulta.php'>Volver a la página</a>";
+
+echo "<a href='http://localhost/php/ejemplo01/Productos/FrmProductos.php'>Volver a la página</a>";
 ?>

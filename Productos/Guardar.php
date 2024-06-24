@@ -1,6 +1,4 @@
 <?php
-
-// Obtener los datos del formulario
 $nombreProducto = $_POST['NombreProducto'];
 $nombreProveedor = $_POST['Proveedor'];
 $categoria = $_POST['Categoria'];
@@ -9,38 +7,45 @@ $precio = $_POST['PrecioUni'];
 
 require_once "ConexionPDO.php";
 $conn = new ConexionPDO();
-$pdo = $conn->open_connection(); 
+$conn->open_connection();
+
+function getOrInsertSupplier($conn, $nombreProveedor) {
+    if (is_array($nombreProveedor) && isset($nombreProveedor['SupplierID'])) {
+        return $nombreProveedor['SupplierID'];
+    } else {
+        $sql = "INSERT INTO suppliers (SupplierName) VALUES ('$nombreProveedor')";
+        $conn->ejecutar($sql);
+        return $conn->get_last_insert_id();
+    }
+}
+
+function getOrInsertCategory($conn, $categoria) {
+    if (is_array($categoria) && isset($categoria['CategoryID'])) {
+        return $categoria['CategoryID'];
+    } else {
+        $sql = "INSERT INTO categories (CategoryName) VALUES ('$categoria')";
+        $conn->ejecutar($sql);
+        return $conn->get_last_insert_id();
+    }
+}
 
 try {
-    $pdo->beginTransaction();
+    $conn->beginTransaction();
 
-    if ($nombreProveedor) {
-        $supplier_id = $nombreProveedor['SupplierID'];
-    } else {
-        $stmt = $pdo->prepare("INSERT INTO suppliers (SupplierName) VALUES (nombre_proveedor)");
-        $stmt->execute(['nombre_proveedor' => $nombreProveedor]);
-        $supplier_id = $pdo->lastInsertId();
-    }
+    $supplier_id = getOrInsertSupplier($conn, $nombreProveedor);
+    $category_id = getOrInsertCategory($conn, $categoria);
+
+    $sql = "INSERT INTO products (ProductName, SupplierID, CategoryID, Unit, Price) VALUES ('$nombreProducto', '$supplier_id', '$category_id', '$unidades', '$precio')";
+    $conn->ejecutar($sql);
 
     
-    if ($categoria) {
-        $category_id = $categoria['CategoryID'];
-    } else {
-        $stmt = $pdo->prepare("INSERT INTO categories (CategoryName) VALUES (categoria)");
-        $stmt->execute(['categoria' => $categoria]);
-        $category_id = $pdo->lastInsertId();
-    }
+    header("Location:PrincipalProductos.php");
 
-     
-    $stmt = $pdo->prepare("INSERT INTO products (ProductName, SupplierID, CategoryID, Unit, Price) VALUES ( '$nombreProducto', '$supplier_id', '$category_id', '$unidades', '$precio')");
-    header("Location: PrincipalProductos.php");
     exit();
 } catch (Exception $e) {
-    
-    $pdo->rollBack();
+    $conn->rollBack();
     echo "Fallo: " . $e->getMessage();
 }
 
 $conn->close_connection();
-
 ?>
