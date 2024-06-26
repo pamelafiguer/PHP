@@ -51,5 +51,9 @@ class ConexionPDO {
     public function contar($rs) {
         return $rs->rowCount();
     }
+
+    public function closeCursor($stmt) {
+        $stmt->closeCursor();
+    }
 }
 ?>

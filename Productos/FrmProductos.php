@@ -3,8 +3,16 @@
 require_once "ConexionPDO.php";
                   $conn=new ConexionPDO();
                   $conn->open_connection();
-                  $rs=$conn->ejecutar("SELECT distinct s.SupplierName  FROM  products p  INNER JOIN  categories c ON p.CategoryID = c.CategoryID INNER JOIN suppliers  s ON p.SupplierID = s.SupplierID  order by  s.SupplierName");
-                  $st=$conn->ejecutar("SELECT distinct c.CategoryName  FROM  products p  INNER JOIN  categories c ON p.CategoryID = c.CategoryID INNER JOIN suppliers  s ON p.SupplierID = s.SupplierID  order by  c.CategoryName");
+                  $sql1 = "CALL GetDistinctSuppliers()";
+                  $sql2 = "CALL GetDistinctCategories()";
+
+                  $rs = $conn->ejecutar($sql1);
+                  $suppliers = $rs->fetchAll(PDO::FETCH_ASSOC);
+                  $conn->closeCursor($rs);
+
+                  $st = $conn->ejecutar($sql2);
+                  $categories = $st->fetchAll(PDO::FETCH_ASSOC);
+                  $conn->closeCursor($st);
                    // $data=$rs->fetchAll();
                    //var_dump($data);
                   
@@ -33,13 +41,10 @@ require_once "ConexionPDO.php";
                   
                   <br><select name="Proveedor" id="Proveedor">
                   <?php
-                          // $consultaEstado = $conn->ejecutar($rs);
-                        while ($Proveedor = $rs->fetch()) {
-                              $nombreProveedor = htmlspecialchars(trim($Proveedor[0])); 
+                        foreach ($suppliers as $supplier) {
+                              $nombreProveedor = htmlspecialchars(trim($supplier['SupplierName'])); 
                               echo "<option value='$nombreProveedor'>$nombreProveedor</option>";
-                                    //echo $pais[0];
-                                    
-                              }
+                        }
                   ?>
                   </select><br>
             </div>
@@ -48,12 +53,10 @@ require_once "ConexionPDO.php";
                   
                   <br><select name="Categoria" id="Categoria">
                   <?php
-                          // $consultaEstado = $conn->ejecutar($rs);
-                        while ($categoria = $st->fetch()) {
-                              $categoria = htmlspecialchars(trim($categoria[0])); 
+                        foreach ($categories as $category) {
+                              $categoria = htmlspecialchars(trim($category['CategoryName'])); 
                               echo "<option value='$categoria'>$categoria</option>";
-                                    //echo $pais[0];
-                                    }
+                        }
                   ?>
                   </select><br>
             </div>

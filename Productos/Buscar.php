@@ -1,39 +1,33 @@
 <?php
-    require_once "ConexionPDO.php";
-    $conn = new ConexionPDO();
-    $conn->open_connection();
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $tipoBusqueda = $_POST['tipo_busqueda'];
-        $terminoBusqueda = $tipoBusqueda == 'categoria' ? $_POST['Categoria'] : $_POST['Proveedor'];
+require_once "ConexionPDO.php";
 
-        
+$conn = new ConexionPDO();
+$conn->open_connection();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $tipoBusqueda = $_POST['tipo_busqueda'];
+    $terminoBusqueda = $tipoBusqueda == 'categoria' ? $_POST['Categoria'] : $_POST['Proveedor'];
+
+    try {
         if ($tipoBusqueda == 'categoria') {
-            $sql = "SELECT p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, p.Unit, p.Price 
-                    FROM products p 
-                    INNER JOIN categories c ON p.CategoryID = c.CategoryID 
-                    INNER JOIN suppliers s ON p.SupplierID = s.SupplierID 
-                    WHERE c.CategoryName = :terminoBusqueda";
-        } elseif ($tipoBusqueda == 'proveedor') {
-            $sql = "SELECT p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, p.Unit, p.Price 
-                    FROM products p 
-                    INNER JOIN categories c ON p.CategoryID = c.CategoryID 
-                    INNER JOIN suppliers s ON p.SupplierID = s.SupplierID 
-                    WHERE s.SupplierName = :terminoBusqueda";
+            // Aquí debes crear un procedimiento similar para la búsqueda por categoría
+            $sql = "CALL GetProductsByCategory(:terminoBusqueda)";
+        } else {
+            $sql = "CALL GetProductsBySupplier(:terminoBusqueda)";
         }
-        
-        try {
-            $stmt = $conn->ejecutar($sql, [':terminoBusqueda' => $terminoBusqueda]);
-            $resultados = $stmt->fetchAll();
-    
+
+        $stmt = $conn->ejecutar($sql, [':terminoBusqueda' => $terminoBusqueda]);
+        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         if ($resultados) {
             echo "<table border='1'><tr>
-                <td>Nro</td>
-                <td>Codigo del Producto</td>
-                <td>Nombre del Producto</td>
-                <td>Nombre Proveedor</td>
-                <td>Categoria</td>
-                <td>Unidad</td>
-                <td>Precio</td></tr>";
+                    <td>Nro</td>
+                    <td>Codigo del Producto</td>
+                    <td>Nombre del Producto</td>
+                    <td>Nombre Proveedor</td>
+                    <td>Categoria</td>
+                    <td>Unidad</td>
+                    <td>Precio</td></tr>";
             $n = 1;
             foreach ($resultados as $row) {
                 echo "<tr><td>" . $n . "</td>";
@@ -50,16 +44,11 @@
         } else {
             echo "No se encontraron resultados.";
         }
-        
-        
-    }catch (PDOException $e) {
-    echo "Error en la consulta: " . $e->getMessage();
-}
-    
-    
+    } catch (PDOException $e) {
+        echo "Error en la consulta: " . $e->getMessage();
+    }
 }
 
-echo "<a href='http://localhost/php/ejemplo01/Productos/FrmProductos.php'>Volver a la página</a>";
+echo "<a href='FrmProductos.php'>Volver a la página</a>";
 $conn->close_connection();
-
 ?>
