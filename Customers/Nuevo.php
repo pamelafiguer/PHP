@@ -8,14 +8,19 @@
 </head>
 <body>
     <form name="form1" method="post" action="Grabar.php">
+    <h2> CLIENTES </h2><br>
+    <br>
     <div class="form-group">
+        
         <div class="form-content">
+            
+            
             <label for="name">NOMBRE   : </label>
-            <input type="text" name="Nombre" placeholder="Escribe Nombre"></br>
+            <input type="text" name="Nombre" placeholder="Escribe Nombre"><br>
         </div>
         <div class="form-content">
             <label for="name">CONTACTO NOMBRE: </label>
-            <input type="text" name="Contacto" placeholder="Escribe nombre de contacto"></br>
+            <input type="text" name="Contacto" placeholder="Escribe nombre de contacto"><br>
         </div>
         <div class="form-content">
             <label for="name"> DIRECCION   : </label>
@@ -37,6 +42,9 @@
 
     
     <input class="btn" type="submit" value="Grabar">
+    <br>
+
+    <a href="http://localhost/php/ejemplo01/index.html">Volver a pagina </a>
 
     </form>
     

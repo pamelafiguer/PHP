@@ -31,6 +31,8 @@ require_once "ConexionPDO.php";
 </head>
 <body>
       <form name="form" method="POST" action="Buscar.php">
+            <h2> PRODUCTOS </h2><br>
+            <br>
             <div class="form-group">
                   <div class="form-content">
                   <label for="name">NOMBRE DEL PRODUCTO :  </label> <br>

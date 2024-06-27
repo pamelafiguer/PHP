@@ -27,6 +27,25 @@ body {
     text-align: center;
 }
 
+a {
+    color: rgba(255, 30, 118);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 40px;
+    color: aliceblue;
+    margin-bottom: 10px;
+}
 .form-container h2 {
     font-size: 40px;
     color: aliceblue;
@@ -42,7 +61,7 @@ form {
     padding:  50px;
     background: linear-gradient( 
         50deg,
-        rgb(8, 49, 59)0%,
+        rgb(61, 171, 199)0%,
         rgb(107, 76, 192) 50%,
         rgb(230, 144, 247) 100%
     );

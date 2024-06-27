@@ -1,29 +1,36 @@
-@import url("<link href=https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #f1c598, #e2e2e2);
-    background-image: url(..\img\bg-web.png)
+    font-family: 'Poppins', Arial, sans-serif;
+    background: url('img/bg-web.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #e2e2e2; /* Fallback color */
 }
 
 header {
-    background-color: #333;
-    padding: 10px 0;
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
     color: #fff;
+    padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el encabezado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
 }
 
 .social {
     display: block;
-    margin-bottom: 10px;
+    margin-top: 10px;
     font-size: 1.2em;
 }
 
 nav {
-    margin-top: 10px;
+    background-color: rgba(68, 68, 68, 0.8); /* Fondo semi-transparente */
+    margin: 20px 0;
 }
 
 .menu-principal {
@@ -32,11 +39,10 @@ nav {
     margin: 0;
     display: flex;
     justify-content: center;
-    background-color: #444;
 }
 
 .menu-item {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .menu-item a {
@@ -44,15 +50,41 @@ nav {
     color: #fff;
     padding: 10px 20px;
     display: block;
-    transition: background 0.3s, color 0.3s; /* Transiciones suaves */
+    transition: background 0.3s, color 0.3s;
 }
 
 .menu-item a:hover {
-    background-color: #555; /* Fondo al pasar el ratón */
-    color: #ffeb3b; /* Color de texto al pasar el ratón */
+    background-color: #555;
+    color: #ffeb3b;
 }
 
 .menu-item a:active {
-    background-color: #666; /* Fondo al hacer clic */
-    color: #fff; /* Color de texto al hacer clic */
+    background-color: #666;
+    color: #fff;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    margin: 20px;
+    border-radius: 10px;
+}
+
+main h2 {
+    font-size: 1.5em;
+}
+
+main p {
+    font-size: 1.2em;
+}
+
+.imagen-principal {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

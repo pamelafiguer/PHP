@@ -3,6 +3,7 @@ $nombreProducto = $_POST['NombreProducto'];
 $nombreProveedor = $_POST['Proveedor'];
 $categoria = $_POST['Categoria'];
 $unidades = $_POST['Unidades'];
+$precio = $_POST['PrecioUni'];
 
 
 require_once "ConexionPDO.php";

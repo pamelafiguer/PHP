@@ -1,7 +1,7 @@
 <?php
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASS',"1234");
+define('DB_PASS',"123");
 define('DB_NAME','NORTHWIND');
 define('MYSQL_CONN_ERROR', 'Unable to Connect to database');
 class ConexionPDO {

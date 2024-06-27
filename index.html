@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Web</title>
+    <title>Página Web</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <span class="social">Síguenos en: </span>
-				<ul class="menu-principal">
-		    	    <li class="menu-item"><a href="/peliculas/cartelera">Productos</a></li>
-		       		<li class="menu-item"><a href="/peliculas/estrenos">Categorias</a></li>
-		       		<li class="menu-item"><a href="http://www.cinestar.com.pe/starcard">Empleado</a></li>
-		        	<li class="menu-item"><a href="{{ url_for('cines') }}">Clientes</a></li>
-		        	
-		    	</ul>
-			</nav>
-
-    
+    <header>
+        <h1>Bienvenido a Nuestra Página</h1>
+        <span class="social">Puedes Navegar:</span>
+    </header>
+    <nav>
+        <ul class="menu-principal">
+            <li class="menu-item"><a href="http://localhost/php/ejemplo01/Productos/FrmProductos.php">Productos</a></li>
+            <li class="menu-item"><a href="http://localhost/php/ejemplo01/Categorias/listado.php">Categorías</a></li>
+            <li class="menu-item"><a href="http://localhost/php/ejemplo01/Empleado/index.php">Empleados</a></li>
+            <li class="menu-item"><a href="http://localhost/php/ejemplo01/Customers/Nuevo.php">Clientes</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Bienvenido</h2>
+            <p>Explora nuestras categorías y productos. ¡Esperamos que disfrutes de tu visita!</p>
+        </section>
+    </main>
 </body>
 </html>
