@@ -1,7 +1,7 @@
 <?php
 include 'Conexion.php';
 
-// Verificar si el formulario fue enviado y si 'Buscar' está definido en $_POST
+
 $buscar = isset($_POST['Buscar']) ? $_POST['Buscar'] : '';
 $conexion = new Conexion();
 $resultado = $conexion->obtenerCategorias($buscar);
@@ -18,12 +18,24 @@ echo "<h3>Table Categories</h3>";
                     <input type="text" name="Buscar" value="<?= htmlspecialchars($buscar); ?>"><br>
                 </div><br>
                 <br><input class="btn1" type="submit" value="Buscar">
-                
+               
+       
+      
+
+    
             </div>
     </form>
 <?php
 
-echo "<table border='1'>";
+echo "<table border='1'>
+            <thead>
+            
+                <th>CategoryID</th>
+                <th>CategoryName</th>
+                <th>Description</th>
+                
+            
+             </thead>";
 while ($registro = $conexion->recorrer($resultado)) {
     echo "<tr>";
     echo "<td>" . $registro['CategoryID'];
