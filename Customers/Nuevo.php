@@ -11,7 +11,7 @@
 
 <div class="container">
         <form name="form1" method="post" action="Grabar.php">
-        <h2> PRODUCTOS </h2><br>
+        <h2> CLIENTES </h2><br>
         <br>
         <div class="form-group">
             <div class="form-content">
