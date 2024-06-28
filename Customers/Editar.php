@@ -18,8 +18,9 @@ foreach($data as $row){
 ?>
 <html>
     <link rel="stylesheet" href="style2.css">
-<form name="form1" method="post" action="guardar.php">
-    
+    <div class="container">
+    <form name="form1" method="post" action="guardar.php">
+    <h2>EDITAR CLIENTE</h2>
     <div class="form-group">
         
             <input type="hidden" name="CustomerID" value="<?=$id;?>"> 
@@ -48,9 +49,11 @@ foreach($data as $row){
             <label for="name">PAIS          : </label>
             <input type="text" name="Pais" value='<?=$pais;?>'></br>       
         </div>
+        <br>
+        <input class="btn btn-primary" type="submit"  value="Guardar">
+    </div>
     </div>
    
-     <input class="btn" type="submit" value="Consul">
 </form>
 </html>
 

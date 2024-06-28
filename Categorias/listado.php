@@ -47,4 +47,5 @@ while ($registro = $conexion->recorrer($resultado)) {
     echo $tr;
 }
 echo "</table>";
+echo "<a href='http://localhost/php/ejemplo01/index.html'>Volver a la página</a>";
 ?>

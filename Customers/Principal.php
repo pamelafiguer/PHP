@@ -3,6 +3,17 @@ require_once "ConexionPDO.php";
 $conn=new ConexionPDO();
 $rs=$conn->ejecutar("select * from customers");
 $data=$rs->fetchAll();
+
+
+echo '<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>';
 echo "<table border='1'><tr><td>Nro</td>
 <td>Nombre</td>
 <td>Nombre de Contacto</td>
@@ -26,5 +37,5 @@ foreach ($data as $row){
 }
 echo "</table>";
 
-echo "<a href=http://localhost/php/Clientes/Customers/Nuevo.php> volver a la pagina</a> "
+echo "<a href=http://localhost/php/ejemplo01/index.html> volver a la pagina</a> "
 ?>

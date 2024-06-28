@@ -7,25 +7,25 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <form name="form1" method="post" action="Grabar.php">
-    <h2> CLIENTES </h2><br>
-    <br>
-    <div class="form-group">
-        
-        <div class="form-content">
-            
-            
-            <label for="name">NOMBRE   : </label>
-            <input type="text" name="Nombre" placeholder="Escribe Nombre"><br>
-        </div>
-        <div class="form-content">
-            <label for="name">CONTACTO NOMBRE: </label>
-            <input type="text" name="Contacto" placeholder="Escribe nombre de contacto"><br>
-        </div>
-        <div class="form-content">
-            <label for="name"> DIRECCION   : </label>
-            <input type="text" name="Direccion" placeholder="Escribe direccion"></br>
-        </div>
+
+
+<div class="container">
+        <form name="form1" method="post" action="Grabar.php">
+        <h2> PRODUCTOS </h2><br>
+        <br>
+        <div class="form-group">
+            <div class="form-content">
+                <label for="name">NOMBRE   : </label>
+                <input type="text" name="Nombre" placeholder="Escribe Nombre"><br>
+            </div>
+            <div class="form-content">
+                <label for="name">CONTACTO NOMBRE: </label>
+                <input type="text" name="Contacto" placeholder="Escribe nombre de contacto"><br>
+            </div>
+            <div class="form-content">
+                <label for="name"> DIRECCION   : </label>
+                <input type="text" name="Direccion" placeholder="Escribe direccion"></br>
+            </div>
         <div class="form-content">
             <label for="name">CIUDAD     : </label>
             <input type="text" name="Ciudad" placeholder="Escribe ciudad"></br>
@@ -38,15 +38,15 @@
             <label for="name">PAIS    : </label>
             <input type="text" name="Pais" placeholder="Escribe Pais"></br>
         </div>
+        </div>
+            
+        <div class="form-group">
+        <input class="btn btn-primary" type="submit"  value="Guardar">
+        </div>
+        <a href="http://localhost/php/ejemplo01/index.html">Volver a pagina </a>
+        </form>
     </div>
 
-    
-    <input class="btn" type="submit" value="Grabar">
-    <br>
-
-    <a href="http://localhost/php/ejemplo01/index.html">Volver a pagina </a>
-
-    </form>
     
 </body>
 </html>

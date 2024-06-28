@@ -24,23 +24,24 @@ if (isset($_GET['CategoryID'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="actualizarCategoria.php" method="post">
-    <h2>Actualizar Categoría</h2><br>
-    <br>
-    <div class="form-group">
-            <input type="hidden" name="CategoryID" value="<?= htmlspecialchars($CategoryID); ?>">
-        
-        <div class="form-content">
-            <label for="name">CATEGORÍA:</label>
-            <input type="text" name="CategoryName" value="<?= htmlspecialchars($registro['CategoryName']); ?>"><br>
-        </div>
-        <div class="form-content">
-            <label for="name">DESCRIPCIÓN:</label>
-            <input type="text" name="Description" value="<?= htmlspecialchars($registro['Description']); ?>"><br>
-        </div>
+    <div class="container">
+        <form name="form1" action="actualizarCategoria.php" method="post">
+        <h2>Actualizar Categoría</h2><br>
+        <br>
+        <div class="form-group">
+        <input type="hidden" name="CategoryID" value="<?= htmlspecialchars($CategoryID); ?>">
+                <div class="form-content">
+                    <label for="name">CATEGORÍA:</label>
+                    <input type="text" name="CategoryName" value="<?= htmlspecialchars($registro['CategoryName']); ?>"><br>
+                </div>
+                <div class="form-content">
+                    <label for="name">DESCRIPCIÓN:</label>
+                    <input type="text" name="Description" value="<?= htmlspecialchars($registro['Description']); ?>"><br>
+                </div>
+            </div>
+            <input class="btn btn-primary" type="submit"  value="Grabar">
+        </form>
     </div>
-    <input class="btn1" type="submit" value="Grabar">
-</form>
 </body>
 </html>
 

@@ -13,15 +13,18 @@ class ConexionPDO {
             $this->conn = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            $output = "<script>console.log('".$e->getMessage()."');</script>";
-            echo $output;
+            die(MYSQL_CONN_ERROR);
         }
     }
 
     public function ejecutar($sql, $params = []) {
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute($params);
-        return $stmt;
+        if ($this->conn) {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($params);
+            return $stmt;
+        } else {
+            throw new Exception("No hay conexión establecida");
+        }
     }
 
     public function get_last_insert_id() {

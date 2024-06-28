@@ -30,65 +30,57 @@ require_once "ConexionPDO.php";
       <link rel="stylesheet" href="style4.css">
 </head>
 <body>
-      <form name="form" method="POST" action="Buscar.php">
-            <h2> PRODUCTOS </h2><br>
-            <br>
+<div class="container">
+        <form name="form" method="POST" action="Buscar.php">
+            <h2>PRODUCTOS</h2>
             <div class="form-group">
-                  <div class="form-content">
-                  <label for="name">NOMBRE DEL PRODUCTO :  </label> <br>
-                  <input type="text" name="NombreProducto" placeholder="Nombre del Producto"></br>
-                  </div>
-            <div class="form-content">
-                  <label for="name">NOMBRE DEL PROVEEDOR :  </label>
-                  
-                  <br><select name="Proveedor" id="Proveedor">
-                  <?php
+                <label for="NombreProducto">NOMBRE DEL PRODUCTO:</label>
+                <input type="text" name="NombreProducto" id="NombreProducto" placeholder="Nombre del Producto">
+            </div>
+            <div class="form-group">
+                <label for="Proveedor">NOMBRE DEL PROVEEDOR:</label>
+                <select name="Proveedor" id="Proveedor">
+                    <?php
                         foreach ($suppliers as $supplier) {
-                              $nombreProveedor = htmlspecialchars(trim($supplier['SupplierName'])); 
-                              echo "<option value='$nombreProveedor'>$nombreProveedor</option>";
+                            $nombreProveedor = htmlspecialchars(trim($supplier['SupplierName']));
+                            echo "<option value='$nombreProveedor'>$nombreProveedor</option>";
                         }
-                  ?>
-                  </select><br>
+                    ?>
+                </select>
             </div>
-            <div class="form-content">
-            <label for="name">NOMBRE DE CATEGORIA :  </label>
-                  
-                  <br><select name="Categoria" id="Categoria">
-                  <?php
+            <div class="form-group">
+                <label for="Categoria">NOMBRE DE CATEGORÍA:</label>
+                <select name="Categoria" id="Categoria">
+                    <?php
                         foreach ($categories as $category) {
-                              $categoria = htmlspecialchars(trim($category['CategoryName'])); 
-                              echo "<option value='$categoria'>$categoria</option>";
+                            $categoria = htmlspecialchars(trim($category['CategoryName']));
+                            echo "<option value='$categoria'>$categoria</option>";
                         }
-                  ?>
-                  </select><br>
+                    ?>
+                </select>
             </div>
-            <div class="form-content">
-                  <label for="name">UNIDADES :  </label><br>
-                  <input type="number" name="Unidades" placeholder="Unidades">
+            <div class="form-group">
+                <label for="Unidades">UNIDADES:</label>
+                <input type="number" name="Unidades" id="Unidades" placeholder="Unidades">
             </div>
-            <div class="form-content">
-                  <label for="name">PRECIO UNIDAD :  </label>
-                  <input type="number" name="PrecioUni" placeholder="Precio">
-            </div><br>
-
-            <div>
-            <input type="radio" value="categoria" name="tipo_busqueda" id="categoria" checked/>
-            <label for="categoria">Buscar por Categoría</label>
+            <div class="form-group">
+                <label for="PrecioUni">PRECIO UNIDAD:</label>
+                <input type="number" name="PrecioUni" id="PrecioUni" placeholder="Precio">
             </div>
-            <div>
-            <input type="radio" value="proveedor" name="tipo_busqueda" id="proveedor" checked/>
-            <label for="proveedor">Buscar por Proveedor</label>
+            <div class="form-group radio-group">
+                <label>
+                    <input type="radio" value="categoria" name="tipo_busqueda" id="categoria" checked> Buscar por Categoría
+                </label>
+                <label>
+                    <input type="radio" value="proveedor" name="tipo_busqueda" id="proveedor"> Buscar por Proveedor
+                </label>
             </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" formaction="Guardar.php" value="Guardar">
+                <input class="btn btn-secondary" type="submit" formaction="Buscar.php" value="Consultar">
             </div>
-
-
-      <input class="btn1" type="submit" formaction="Guardar.php" value="Guardar" ><br>
-      <input class="btn2" type="submit" formaction="Buscar.php" value="Consultar">
-
-
+            <a href='http://localhost/php/ejemplo01/index.html'>Volver a la página</a>
       </form>
-
-
-
+    </div>
 </body>
 </html>
