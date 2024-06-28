@@ -40,6 +40,9 @@ if (isset($_GET['CategoryID'])) {
                 </div>
             </div>
             <input class="btn btn-primary" type="submit"  value="Grabar">
+            <a href='http://localhost/dashboard/php/Categorias/listado.php'>Volver a la página</a>
+
+
         </form>
     </div>
 </body>

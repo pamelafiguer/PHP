@@ -11,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #ecd3fa;
+    background-color: #c9f8e2;
     color: #2c2828;
 }
 
@@ -35,8 +35,8 @@ form {
     cursor: pointer;
     background: linear-gradient(
         90deg,
-        rgb(248, 117, 209) 0%,
-        rgb(252, 193, 237) 100%
+        rgb(11, 122, 104) 0%,
+        rgb(88, 141, 128) 100%
     );
 }
 

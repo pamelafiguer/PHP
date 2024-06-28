@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', Arial, sans-serif;
-    background: url('img/bg-web.png') no-repeat center center fixed;
+    background: url('img/Alimentos.png') no-repeat center center fixed;
     /*background: linear-gradient(to right, #f1c598, #e2e2e2);*/
     background-size: cover;
     color: #333;
@@ -13,7 +13,7 @@ body {
 .container {
     max-width: 700px;
     margin: 50px auto;
-    background: rgba(247, 204, 248, 0.9);
+    background: rgba(245, 194, 161, 0.9);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(145, 145, 145, 0.1);

@@ -2,9 +2,9 @@
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 70px;;
     font-family: 'Poppins', Arial, sans-serif;
-    background: url('img/bg-web.png') no-repeat center center fixed;
+    background: url('img/Cmapo2.png') no-repeat center center fixed;
     /*background: linear-gradient(to right, #f1c598, #e2e2e2);*/
     background-size: cover;
     color: #333;
@@ -13,9 +13,9 @@ body {
 .container {
     max-width: 700px;
     margin: 50px auto;
-    background: rgba(218, 192, 248, 0.9);
+    background: rgba(198, 248, 213, 0.9);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 50px;
     box-shadow: 0 4px 8px rgba(145, 145, 145, 0.1);
 }
 
@@ -83,7 +83,7 @@ form {
 }
 
 .btn-primary {
-    background-color: #fc24f1;
+    background-color: #25ac83;
     color: #fff;
 }
 

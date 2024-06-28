@@ -54,6 +54,6 @@ if ($data) {
 
 $conn->close_connection();
 
-echo "<div class='container'><a href='http://localhost/php/ejemplo01/Productos/FrmProductos.php'>Volver a la página</a></div>";
+echo "<div class='container'><a href='http://localhost/dashboard/php/Productos/FrmProductos.php'>Volver a la página</a></div>";
 echo '</body></html>';
 ?>

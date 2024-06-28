@@ -7,23 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="conteiner">
+    <div class="container">
         <form name="form" method="POST" action="GrabarCategoria.php">
             <h2> Nueva Categoria </h2><br>
-            <br>
+            
             <div class="form-group">
                 <div class="form-content">
-                    <label for="name">CATEGORIA  :</label> <br>
+                    <label for="name">CATEGORIA  :</label> 
                     <input type="text" name="CategoryName" placeholder="Categoria"></br>
                 </div>
                 <div class="form-content">
-                    <label for="name">DESCRIPCION  :</label> <br>
+                    <label for="name">DESCRIPCION  :</label> 
                     <input type="text" name="Description" placeholder="Descripcion"></br>
                 </div>
 
                 
             </div>
-            <input class="btn1" type="submit" value="Grabar"><br>
+            <input class="btn btn-primary" type="submit"  value="Grabar"><br>
+            <a href='http://localhost/dashboard/php/index.html'>Volver a la página</a>
+
         </form>
         </div>
     
