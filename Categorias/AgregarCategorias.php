@@ -24,7 +24,7 @@
                 
             </div>
             <input class="btn btn-primary" type="submit"  value="Grabar"><br>
-            <a href='http://localhost/dashboard/php/index.html'>Volver a la página</a>
+            <a href='https://73901147.000webhostapp.com/php/ejemplo01/index.html'>Volver a la página</a>
 
         </form>
         </div>

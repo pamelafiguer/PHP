@@ -79,7 +79,7 @@ require_once "ConexionPDO.php";
                 <input class="btn btn-primary" type="submit" formaction="Guardar.php" value="Guardar">
                 <input class="btn btn-secondary" type="submit" formaction="Buscar.php" value="Consultar">
             </div>
-            <a href='http://localhost/dashboard/php/index.html'>Volver a la página</a>
+            <a href='https://73901147.000webhostapp.com/php/ejemplo01/index.html'>Volver a la página</a>
       </form>
     </div>
 </body>

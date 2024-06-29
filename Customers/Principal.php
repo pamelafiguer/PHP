@@ -39,5 +39,5 @@ foreach ($data as $row){
 }
 echo "</table>";
 
-echo "<a href=http://localhost/dashboard/php/Customers/Nuevo.php> volver a la pagina</a> "
+echo "<a href=https://73901147.000webhostapp.com/php/ejemplo01/Customers/Nuevo.php> volver a la pagina</a> "
 ?>

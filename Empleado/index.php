@@ -50,7 +50,7 @@
             }).catch(err => console.log(err));
         }
     </script>
-    <a href='http://localhost/dashboard/php/index.html'>Volver a la página</a>
+    <a href='https://73901147.000webhostapp.com/php/ejemplo01/index.html'>Volver a la página</a>
 </body>
 </html>
     

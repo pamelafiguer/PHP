@@ -47,5 +47,5 @@ while ($registro = $conexion->recorrer($resultado)) {
     echo $tr;
 }
 echo "</table>";
-echo "<a href='http://localhost/dashboard/php/Categorias/AgregarCategorias.php'>Volver a la página</a>";
+echo "<a href='https://73901147.000webhostapp.com/php/ejemplo01/Categprias/AgregarCategorias.php'>Volver a la página</a>";
 ?>

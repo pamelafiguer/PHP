@@ -1,7 +1,7 @@
 <?php
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', '123');
 define('DB_NAME', 'Northwind');
 define('MYSQL_CONN_ERROR', 'Unable to Connect to database');
 mysqli_report(MYSQLI_REPORT_STRICT);
